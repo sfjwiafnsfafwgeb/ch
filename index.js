@@ -3,7 +3,11 @@ const { Client } = require('discord.js-selfbot-v13');
 const Redis = require('ioredis');
 
 // Redis configuration
-const redis = new Redis('redis-17189.c328.europe-west3-1.gce.redns.redis-cloud.com:17189');
+const redis = new Redis({
+  host: 'redis-17189.c328.europe-west3-1.gce.redns.redis-cloud.com',
+  port: 17189,
+  password: 'vFAjNuGE6YJC24Jro8E1oY372KnsnVZv', // Provide the password directly
+});
 
 redis.on('error', (err) => {
     console.error('Redis Error:', err);
